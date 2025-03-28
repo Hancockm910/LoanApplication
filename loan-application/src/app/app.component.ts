@@ -3,21 +3,22 @@ import { RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { NgIf, isPlatformBrowser } from '@angular/common';
 import { firstValueFrom } from 'rxjs';
+import { LoanListComponent } from './loan-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf],
+  imports: [RouterOutlet, NgIf, LoanListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
   title = 'Loan Application';
-  xmlContent: string = '';
 
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit() {
+    // Use a window check to ensure this code runs only on the client side.
     if (typeof window !== 'undefined') {
       console.log('Running in browser (window is defined)');
       this.loadAndTransformXML();
@@ -27,7 +28,6 @@ export class AppComponent implements AfterViewInit {
     console.log('ngAfterViewInit completed');
   }
   
-
   loadAndTransformXML() {
     console.log('Loading and transforming XML...');
     Promise.all([

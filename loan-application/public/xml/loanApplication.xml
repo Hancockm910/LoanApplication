@@ -1,11 +1,26 @@
 <loanApplication>
-  <applicant>
-    <name>John Doe</name>
-    <age>30</age>
-  </applicant>
-  <loan amount="5000" currency="USD">
-    <purpose>Home Renovation</purpose>
-    <duration>24</duration>
-  </loan>
-  <status>Pending</status>
+  <applications>
+    <application>
+      <applicant>
+        <name>John Doe</name>
+        <age>30</age>
+      </applicant>
+      <loan amount="5000" currency="USD">
+        <purpose>Car Purchase</purpose>
+        <duration>36</duration>
+      </loan>
+      <status>Approved</status>
+    </application>
+    <application>
+      <applicant>
+        <name>Jane Smith</name>
+        <age>28</age>
+      </applicant>
+      <loan amount="10000" currency="USD">
+        <purpose>Home Renovation</purpose>
+        <duration>60</duration>
+      </loan>
+      <status>Pending</status>
+    </application>
+  </applications>
 </loanApplication>

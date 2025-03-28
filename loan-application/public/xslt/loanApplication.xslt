@@ -17,15 +17,17 @@
           <th>Duration (months)</th>
           <th>Status</th>
         </tr>
-        <tr>
-          <td><xsl:value-of select="applicant/name"/></td>
-          <td><xsl:value-of select="applicant/age"/></td>
-          <td><xsl:value-of select="loan/@amount"/></td>
-          <td><xsl:value-of select="loan/@currency"/></td>
-          <td><xsl:value-of select="loan/purpose"/></td>
-          <td><xsl:value-of select="loan/duration"/></td>
-          <td><xsl:value-of select="status"/></td>
-        </tr>
+        <xsl:for-each select="applications/application">
+          <tr>
+            <td><xsl:value-of select="applicant/name"/></td>
+            <td><xsl:value-of select="applicant/age"/></td>
+            <td><xsl:value-of select="loan/@amount"/></td>
+            <td><xsl:value-of select="loan/@currency"/></td>
+            <td><xsl:value-of select="loan/purpose"/></td>
+            <td><xsl:value-of select="loan/duration"/></td>
+            <td><xsl:value-of select="status"/></td>
+          </tr>
+        </xsl:for-each>
       </table>
     </div>
   </xsl:template>
