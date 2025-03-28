@@ -1,0 +1,11 @@
+<loanApplication>
+  <applicant>
+    <name>John Doe</name>
+    <age>30</age>
+  </applicant>
+  <loan amount="5000" currency="USD">
+    <purpose>Home Renovation</purpose>
+    <duration>24</duration>
+  </loan>
+  <status>Pending</status>
+</loanApplication>
