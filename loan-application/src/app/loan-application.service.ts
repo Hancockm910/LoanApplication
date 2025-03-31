@@ -23,4 +23,8 @@ export class LoanApplicationService {
   getLoanApplications(): Observable<{ loanApplications: LoanApplication[] }> {
     return this.http.get<{ loanApplications: LoanApplication[] }>(this.apiUrl);
   }
+
+  saveLoanApplication(application: LoanApplication): Observable<LoanApplication> {
+    return this.http.post<LoanApplication>(this.apiUrl, application);
+  }
 }

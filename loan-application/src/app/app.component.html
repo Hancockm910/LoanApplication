@@ -1,7 +1,11 @@
 <h1>{{ title }}</h1>
-
-<!-- Transformed XML output will appear below -->
+<!-- Button to open the new loan application form -->
+<button mat-raised-button color="primary" (click)="openLoanForm()">Add New Loan Application</button>
+<!-- Section for XML transformation (if needed) -->
 <div id="xslt-output"></div>
 
-<!-- Display the list of loan applications -->
+<!-- Component that lists loan applications from the backend -->
 <app-loan-list></app-loan-list>
+
+<!-- Conditionally display the loan form overlay -->
+<app-loan-form *ngIf="showLoanForm" (formClosed)="onFormClosed($event)"></app-loan-form>
